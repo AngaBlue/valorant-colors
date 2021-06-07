@@ -1,7 +1,9 @@
-import Head from 'next/head'
-import styles from '../styles/Home.module.scss'
+import Head from "next/head";
+import Color from "../components/Color";
+import colors from "../constants/colors";
+import styles from "../styles/Index.module.scss";
 
-export default function Home() {
+export default function Index() {
   return (
     <div className={styles.container}>
       <Head>
@@ -10,10 +12,22 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <main>
-
-        <input className={styles.input}></input>
+      <main className={styles.main}>
+        <h1 className={styles.title}>Valorant Colored Text</h1>
+        <h2>Did you know you can write colored text in Valorant?</h2>
+        <div className={styles.colors}>
+          {Object.keys(colors).map((name) => (
+            <Color name={name} color={colors[name]} />
+          ))}
+          <Color
+            name="Rainbow"
+            color={`linear-gradient(135deg, ${Object.values(colors).join(
+              ", "
+            )})`}
+          />
+        </div>
+        <input className={styles.input} placeholder="Enter your text..." />
       </main>
     </div>
-  )
+  );
 }
