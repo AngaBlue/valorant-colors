@@ -80,7 +80,26 @@ export default function Index() {
           value={text.raw}
           onChange={(e) => setText({ ...text, raw: e.target.value })}
         />
-        <button onClick={copy} className={styles.button} aria-label="Copy to clipboard">Copy to Clipboard</button>
+        <button
+          onClick={copy}
+          className={styles.button}
+          aria-label="Copy to clipboard"
+        >
+          Copy to Clipboard
+        </button>
+        <h2>How does it work?</h2>
+        <p>
+          Valorant uses the following markup tags to create colors in chat
+          messages.
+        </p>
+        {Object.keys(colors)
+          .filter((c) => c !== "rainbow")
+          .map((c) => (
+            <span style={{ color: colors[c] }}>
+              &lt;{c}&gt;message&lt;/&gt;
+            </span>
+          ))}
+          <p>We can use any combination of these tags in a single message to create any type of rainbow text!</p>
       </main>
     </div>
   );
