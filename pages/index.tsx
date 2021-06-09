@@ -22,7 +22,7 @@ export default function Index() {
     let colored = "";
     if (settings.color === "rainbow") {
       //Rainbow
-      let counter = 1;
+      let counter = 0;
       const colorNames = Object.keys(colors);
       colored = text.raw
         .split("")
