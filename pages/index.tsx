@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import Color from "../components/Color";
 import colors from "../constants/colors";
 import styles from "../styles/Index.module.scss";
+import { toast } from "react-toastify";
 
 interface Settings {
   color: keyof typeof colors;
@@ -39,6 +40,19 @@ export default function Index() {
     setText({ ...text, colored });
   }, [settings.color, text.raw]);
 
+  function copy() {
+    navigator.clipboard.writeText(text.colored);
+    toast.dark("Copied to clipboard!", {
+      position: "bottom-right",
+      autoClose: 5000,
+      hideProgressBar: false,
+      closeOnClick: false,
+      pauseOnHover: true,
+      draggable: false,
+      progress: undefined,
+    });
+  }
+
   return (
     <div className={styles.container}>
       <Head>
@@ -70,7 +84,7 @@ export default function Index() {
           value={text.raw}
           onChange={(e) => setText({ ...text, raw: e.target.value })}
         />
-        <input className={styles.input} readOnly value={text.colored}></input>
+        <button onClick={copy} className={styles.button}>Copy to Clipboard</button>
       </main>
     </div>
   );

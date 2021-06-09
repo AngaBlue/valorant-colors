@@ -5,6 +5,7 @@
     align-items: center;
     flex-direction: column;
     font-size: 1.5rem;
+    margin: 0 1rem;
 }
 
 .title {
@@ -26,11 +27,25 @@
     max-width: 48rem;
     width: 100%;
     color: white;
+    margin-bottom: 1rem;
 }
 
 .colors {
     display: flex;
     margin-bottom: 2rem;
+}
+
+.button {
+  background: linear-gradient(229deg, #e83eff, #00e1ff);
+  background-size: 400% 400%;
+  animation: Gradient 5s ease infinite;
+  padding: 1rem 3rem;
+  max-width: 100%;
+  font-weight: bold;
+  border: none;
+  font-size: large;
+  border-radius: 0.5rem;
+  cursor: pointer;
 }
 
 @keyframes Gradient {
