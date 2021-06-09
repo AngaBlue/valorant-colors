@@ -1,3 +1,5 @@
+@import "./variables.scss";
+
 .main {
   text-align: center;
   display: flex;
@@ -10,7 +12,7 @@
 
 .title {
   font-size: 8rem;
-  background: linear-gradient(229deg, #e83eff, #00e1ff);
+  background: linear-gradient(225deg, $purple, $yellow);
   background-size: 400% 400%;
   animation: Gradient 5s ease infinite;
   background-clip: text;
@@ -22,13 +24,18 @@
 .input {
   padding: 1rem;
   border-radius: 0.5rem;
-  border: #e83eff solid;
+  border: $purple solid;
   background-color: transparent;
   max-width: 48rem;
   width: 100%;
   color: white;
   margin: 1.5rem;
   font-size: large;
+
+  &:focus {
+    outline-color: $yellow;
+    outline-style: none;
+  }
 }
 
 .colors {
@@ -38,7 +45,7 @@
 }
 
 .button {
-  background: linear-gradient(229deg, #e83eff, #00e1ff);
+  background: linear-gradient(225deg, $purple, $yellow);
   background-size: 400% 400%;
   animation: Gradient 5s ease infinite;
   padding: 1rem 3rem;
