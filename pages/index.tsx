@@ -1,9 +1,44 @@
 import Head from "next/head";
+import { useEffect, useState } from "react";
 import Color from "../components/Color";
 import colors from "../constants/colors";
 import styles from "../styles/Index.module.scss";
 
+interface Settings {
+  color: keyof typeof colors;
+}
+
 export default function Index() {
+  const [text, setText] = useState({
+    raw: "",
+    colored: "",
+  });
+
+  const [settings, setSettings] = useState<Settings>({
+    color: "rainbow",
+  });
+
+  useEffect(() => {
+    let colored = "";
+    if (settings.color === "rainbow") {
+      //Rainbow
+      let counter = 1;
+      const colorNames = Object.keys(colors);
+      colored = text.raw
+        .split("")
+        .map((l) => {
+          if (l !== " ") return `<${colorNames[counter++ % 5]}>${l}</>`;
+          return l;
+        })
+        .join("");
+    } else {
+      //Color
+      colored = `<${settings.color}>${text.raw}</>`;
+    }
+
+    setText({ ...text, colored });
+  }, [settings.color, text.raw]);
+
   return (
     <div className={styles.container}>
       <Head>
@@ -17,16 +52,25 @@ export default function Index() {
         <h2>Did you know you can write colored text in Valorant?</h2>
         <div className={styles.colors}>
           {Object.keys(colors).map((name) => (
-            <Color name={name} color={colors[name]} />
+            <Color
+              props={{
+                name,
+                color: colors[name],
+                selected: settings.color === name,
+              }}
+              onClick={() =>
+                setSettings({ ...settings, color: name as keyof typeof colors })
+              }
+            />
           ))}
-          <Color
-            name="Rainbow"
-            color={`linear-gradient(135deg, ${Object.values(colors).join(
-              ", "
-            )})`}
-          />
         </div>
-        <input className={styles.input} placeholder="Enter your text..." />
+        <input
+          className={styles.input}
+          placeholder="Enter your text..."
+          value={text.raw}
+          onChange={(e) => setText({ ...text, raw: e.target.value })}
+        />
+        <input className={styles.input} readOnly value={text.colored}></input>
       </main>
     </div>
   );
