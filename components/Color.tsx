@@ -17,7 +17,7 @@ interface ColorProps
 export default function Color({ props, ...elProps }: ColorProps) {
   return (
     <button {...elProps}style={{ background: props.color }} className={styles.color}>
-      {props.selected && <Tick />}
+      <Tick className={[styles.tick, props.selected ? styles.visible : ""].join(" ")} />
     </button>
   );
 }
