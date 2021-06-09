@@ -18,7 +18,7 @@ export default function SEO(props: SEOProps) {
       <meta charSet="UTF-8" />
       <meta http-equiv="X-UA-Compatible" content="IE=edge" />
       <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-      <link rel="icon" type="image/png" href="/favicon-32x-32.png" />
+      <link rel="icon" href="/favicon.ico" type="image/x-icon" />
       <title>{title}</title>
       {/* <!-- Search Engine --> */}
       <meta name="description" content={desc} />
