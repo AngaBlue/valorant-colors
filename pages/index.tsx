@@ -74,7 +74,7 @@ export default function Index() {
             />
           ))}
         </div>
-        <input
+        <textarea
           className={styles.input}
           placeholder="Enter your text..."
           value={text.raw}

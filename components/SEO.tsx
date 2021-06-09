@@ -7,7 +7,9 @@ interface SEOProps {
 }
 
 export default function SEO(props: SEOProps) {
-  const title = props.title ? props.title + " | Valorant Colored Chat" : "Valorant Colored Chat";
+  const title = props.title
+    ? props.title + " | Valorant Colored Chat"
+    : "Valorant Colored Chat";
   const desc =
     props.desc ||
     "Write colored chat messages in Valorant!  Spice up your game with rainbow or colored messages.";
@@ -18,6 +20,7 @@ export default function SEO(props: SEOProps) {
         content="width=device-width, initial-scale=1, maximum-scale=1"
       />
       <meta charSet="utf-8" />
+      <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
       <title>{title}</title>
       {/* <!-- Search Engine --> */}
       <meta name="description" content={desc} />
@@ -28,10 +31,7 @@ export default function SEO(props: SEOProps) {
       <meta itemProp="image" content="https://valorant.anga.blue/logo.png" />
       {/* <!-- Twitter --> */}
       <meta name="twitter:card" content="summary" />
-      <meta
-        name="twitter:title"
-        content={title}
-      />
+      <meta name="twitter:title" content={title} />
       <meta name="twitter:description" content={desc} />
       <meta name="twitter:site" content="@anga.blue" />
       <meta name="twitter:creator" content="@anga.blue" />
@@ -44,16 +44,13 @@ export default function SEO(props: SEOProps) {
       <meta name="og:description" content={desc} />
       <meta name="og:image" content="https://valorant.anga.blue/logo.png" />
       <meta name="og:url" content="https://valorant.anga.blue" />
-      <meta
-        name="og:site_name"
-        content={title}
-      />
+      <meta name="og:site_name" content={title} />
       <meta name="fb:admins" content="angablue" />
       <meta name="og:type" content="website" />
       {/* <!-- Favicon --> */}
       <link
         rel="apple-touch-icon"
-        sizes="120x120"
+        sizes="180x180"
         href="/apple-touch-icon.png"
       />
       <link
