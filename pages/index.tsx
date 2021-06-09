@@ -58,7 +58,7 @@ export default function Index() {
     <div className={styles.container}>
       <SEO />
       <main className={styles.main}>
-        <h1 className={styles.title}>Valorant Colored Text</h1>
+        <h1 className={styles.title}>Valorant Colored Chat</h1>
         <h2>Did you know you can write colored text in Valorant?</h2>
         <div className={styles.colors}>
           {Object.keys(colors).map((name) => (
