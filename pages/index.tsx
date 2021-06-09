@@ -95,7 +95,7 @@ export default function Index() {
         {Object.keys(colors)
           .filter((c) => c !== "rainbow")
           .map((c) => (
-            <span style={{ color: colors[c] }}>
+            <span style={{ color: colors[c] }} key={c}>
               &lt;{c}&gt;message&lt;/&gt;
             </span>
           ))}
