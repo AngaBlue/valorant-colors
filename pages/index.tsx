@@ -80,7 +80,7 @@ export default function Index() {
           value={text.raw}
           onChange={(e) => setText({ ...text, raw: e.target.value })}
         />
-        <button onClick={copy} className={styles.button}>Copy to Clipboard</button>
+        <button onClick={copy} className={styles.button} aria-label="Copy to clipboard">Copy to Clipboard</button>
       </main>
     </div>
   );

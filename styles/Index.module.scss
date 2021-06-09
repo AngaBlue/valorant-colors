@@ -31,6 +31,7 @@
   color: white;
   margin: 1.5rem;
   font-size: large;
+  font-family: inherit;
 
   &:focus {
     outline-color: $yellow;
