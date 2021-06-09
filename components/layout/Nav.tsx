@@ -1,6 +1,6 @@
 import React from "react";
 import Image from "next/image";
-import styles from "./Nav.module.scss";
+import styles from "../../styles/components/layout/Nav.module.scss";
 
 export default function Nav() {
   return (

@@ -1,4 +1,5 @@
 @import "./variables.scss";
+@import "./animations.scss";
 
 .main {
   text-align: center;
@@ -12,9 +13,7 @@
 
 .title {
   font-size: 8rem;
-  background: linear-gradient(225deg, $purple, $yellow);
-  background-size: 400% 400%;
-  animation: Gradient 5s ease infinite;
+  animation: Gradient 5s ease infinite alternate;
   background-clip: text;
   color: transparent;
   text-align: center;
@@ -47,9 +46,7 @@
 }
 
 .button {
-  background: linear-gradient(225deg, $purple, $yellow);
-  background-size: 400% 400%;
-  animation: Gradient 5s ease infinite;
+  animation: Gradient 5s ease infinite alternate;
   padding: 1rem 3rem;
   max-width: 100%;
   font-weight: bold;
@@ -58,16 +55,4 @@
   border-radius: 0.5rem;
   cursor: pointer;
   margin: 1.5rem 0;
-}
-
-@keyframes Gradient {
-  0% {
-    background-position: 0% 28%;
-  }
-  50% {
-    background-position: 100% 73%;
-  }
-  100% {
-    background-position: 0% 28%;
-  }
 }

@@ -1,0 +1,10 @@
+@import "./variables.scss";
+
+@keyframes Gradient {
+    from {
+        background-color: $purple;
+    }
+    to {
+        background-color: $yellow;
+    }
+}

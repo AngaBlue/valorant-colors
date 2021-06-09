@@ -1,5 +1,5 @@
 import React from "react";
-import styles from "./Color.module.scss";
+import styles from "../styles/components/Color.module.scss";
 import Tick from "./Tick";
 
 interface ColorProps
