@@ -76,7 +76,7 @@ export default function Index() {
         </div>
         <textarea
           className={styles.input}
-          placeholder="Enter your text..."
+          placeholder="Enter your message..."
           value={text.raw}
           onChange={(e) => setText({ ...text, raw: e.target.value })}
         />
