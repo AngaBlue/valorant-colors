@@ -44,7 +44,7 @@ export default function Index() {
     navigator.clipboard.writeText(text.colored);
     toast.dark("Copied to clipboard!", {
       position: "bottom-right",
-      autoClose: 5000,
+      autoClose: 3000,
       hideProgressBar: false,
       closeOnClick: false,
       pauseOnHover: true,
