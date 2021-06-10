@@ -26,9 +26,10 @@ export default function Index() {
       let counter = 0;
       const colorNames = Object.keys(colors);
       colored = text.raw
+        .trim()
         .split("")
         .map((l) => {
-          if (l !== " ") return `<${colorNames[counter++ % 5]}>${l}</>`;
+          if (l !== " ") return `<${colorNames[counter++ % 6 + 1]}>${l}</>`;
           return l;
         })
         .join("");
@@ -46,8 +47,8 @@ export default function Index() {
       position: "bottom-right",
       autoClose: 3000,
       hideProgressBar: false,
-      closeOnClick: false,
-      pauseOnHover: true,
+      closeButton: false,
+      pauseOnHover: false,
       draggable: false,
       progress: undefined,
     });
@@ -61,7 +62,7 @@ export default function Index() {
         <h2>Did you know you can write colored text in Valorant?</h2>
         <div className={styles.colors}>
           {Object.keys(colors).map((name) => (
-            <Color
+            name !== "warning" && <Color
               props={{
                 name,
                 color: colors[name],

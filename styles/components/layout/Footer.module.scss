@@ -9,6 +9,11 @@
     align-items: center;
     justify-content: space-around;
     text-decoration: underline;
+    flex-wrap: wrap;
+
+    > * {
+        margin: 0.5rem 1rem;
+    }
 }
 
 .twitch {
